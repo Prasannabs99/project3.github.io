@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Suraksha</title>
+    
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" width="200px">
+    </div>
+
+    <h1>Welcome to Surakshaa Car Care Pvt Ltd help desk.</h1>
+       <p> Here, you can submit your feedback, complaints, or any issues.
+        You can also contact us directly via call or ping us on Whatsapp.
+        Our team is dedicated to resolving all your queries.Your satisfaction 
+        is our top priority</p>
+        <form action="next_page.html" method="get">
+            <h2>Departments:</h2>
+            <div class="custom-select" style="width:200px;">
+                <select id="Departments" name="Departments" onchange="updateOptions()" required>
+                
+                <option value="Arenasales">Arena-sales</option>
+                <option value="Arenaservices">Arena-services</option>
+                <option value="Nexasales">Nexa-sales</option>
+                <option value="Nexaservices">Nexa-services</option>
+                <option value="Truevalue">Truevalue</option>
+            </select>
+           
+            </div>
+            
+          <h2>Choose the locations:</h2>
+          <div class="custom-select" style="width:200px;">
+            
+
+                <select id="locations" name="locations" required>
+                
+                
+            </select>
+        </div>
+        <div class="next"><br>
+        <button onclick="storeOptions()">Next</button>
+        </div>
+    </div>
+</form>
+
+        <script>
+            function updateOptions() {
+                var Departments = document.getElementById('Departments');
+                var locations = document.getElementById('locations');
+                
+                // Clear existing options
+                locations.innerHTML = '';
+    
+                // Add new options based on the selected category
+                if (Departments.value === "Arenasales") {
+                    locations.add(new Option("Koramangala", "Koramangala"));
+                    locations.add(new Option("Harohalli", "HarohalliKanakapuraMainRoad"));
+                    locations.add(new Option("kolar", "kolarApmcYardBangarpet"));
+                    locations.add(new Option("Attibele", "Attibele"));
+                    locations.add(new Option("Electronic City", "ElectronicCity"));
+                    locations.add(new Option("ChikkaTirupathi", "MalurTalukChikkaTirupathi"));
+                    locations.add(new Option("Srinivaspur", "SrinivaspurKolarRoad"));
+                } else if (Departments.value === "Arenaservices") {
+                    locations.add(new Option("Bommanahalli", "Bommanahalli"));
+                    
+                }else if (Departments.value === "Nexasales") {
+                    locations.add(new Option("Electronic City", "ElectronicCity"));
+                }
+                      else if (Departments.value === "Nexaservices")  {  
+                    locations.add(new Option("Electronic City", "ElectronicCity"));
+                }
+                    
+            else if (Departments.value === "Truevalue") {
+                    locations.add(new Option("Electronic City", "ElectronicCity"));
+                    locations.add(new Option("Chandapura", "Chandapura"));
+                    
+            }
+        }
+        
+
+
+            // Initial population on page load
+            updateOptions();
+            function storeOptions() {
+            
+                var selectedDepartment = document.getElementById("Departments").value;
+                var selectedLocation = document.getElementById("locations").value;
+
+            
+                localStorage.setItem("selectedDepartment", selectedDepartment);
+                localStorage.setItem("selectedLocation", selectedLocation);
+
+                window.location.href = "next_page.html";
+            }
+        </script>
+    
+            
+          
+            
+          
+          
+     
+
+</body>
+</html>

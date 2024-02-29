@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Welcome to Surakshaa Car Care Pvt Ltd help desk. </title>
+    
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Surakshaa Car Care Pvt Ltd help desk. </h1>
+</header>
+
+<div class="container">
+    <button class="size" onclick="toggleForm('complaintForm')">Complaint/Issue </button>
+    <button class="size" onclick="toggleForm('feedbackForm')">Feedback/Suggestion</button>
+    <a href="tel:+91 9449865607"><button class="size">Call</button></a>
+    <a href="https://wa.me/918884442299"><button class="size">WhatsApp</button></a>
+    <button class="size" onclick="openStoredLink()">Google ReView</button>
+</div>
+
+    <div id="complaintForm" class="form-container">
+        <div class="form-popup">
+            <h2>Complaint Form</h2>
+            <form>
+                <!-- Include complaint form fields here -->
+                <label for="complaintDetails">Name:</label>
+                <textarea id="name" name="name" required></textarea>
+                <label for="complaintDetails">Phone Number:</label>
+                <textarea id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required></textarea>
+                <label for="complaintDetails">Discription:</label>
+                <textarea id="complaintDetails" name="complaintDetails" rows="4" required></textarea>
+                <br>
+                
+                <button class="size1" type="submit">Submit Complaint/Issue</button>
+            </form>
+            <button class="size1" onclick="toggleForm('complaintForm')">Close</button>
+        </div>
+    </div>
+
+    <div id="feedbackForm" class="form-container">
+        <div class="form-popup">
+            <h2>Feedback Form</h2>
+            <form>
+                <!-- Include feedback form fields here -->
+                <label for="complaintDetails">Name:</label>
+                <textarea id="name" name="name" required></textarea>
+                <label for="complaintDetails">Phone Number:</label>
+                <textarea id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required></textarea>
+                <label for="complaintDetails">Discription:</label>
+                <textarea id="complaintDetails" name="complaintDetails" rows="4" required></textarea>
+                <br>
+                <button class="size1" type="submit">Submit Feedback/Suggestion</button>
+            </form>
+            <button class="size1" onclick="toggleForm('feedbackForm')">Close</button>
+        </div>
+    </div>
+<script>
+    function toggleForm(formId) {
+        var formContainer = document.getElementById(formId);
+        formContainer.style.display = (formContainer.style.display === 'none' || formContainer.style.display === '') ? 'flex' : 'none';
+
+    }
+    
+    
+
+    function openStoredLink() {
+        // Retrieve values from sessionStorage
+        var selectedDepartment = localStorage.getItem("selectedDepartment");
+        var selectedLocation = localStorage.getItem("selectedLocation");
+
+
+        var links = {
+          
+            Arenasales: {
+
+            Koramangala:"https://assets.marutisurakshaa.com/u/Koramangala",
+            HarohalliKanakapuraMainRoad:"https://assets.marutisurakshaa.com/u/Harohalli",
+            kolarApmcYardBangarpet:"https://assets.marutisurakshaa.com/u/APMC-Yard",
+            Attibele:"https://assets.marutisurakshaa.com/u/Attibele",
+            ElectronicCity:"https://assets.marutisurakshaa.com/u/Electronic-City",
+            MalurTalukChikkaTirupathi:"https://assets.marutisurakshaa.com/u/Chikka-Tirupathi",
+            SrinivaspurKolarRoad:"https://assets.marutisurakshaa.com/u/Srinivaspur"
+        },
+        Arenaservices: {
+            
+            Bommanahalli:"https://assets.marutisurakshaa.com/u/Bommanahalli"
+            
+        },
+        Nexasales: {
+                ElectronicCity:"https://assets.marutisurakshaa.com/u/Electronic-City-Nexa"
+                
+
+            },
+        Nexaservices: {
+                ElectronicCity:"https://assets.marutisurakshaa.com/u/ECity-Nexa-Service"
+                
+
+            },
+            Truevalue: {
+                ElectronicCity:"https://assets.marutisurakshaa.com/u/ECity-Truevalue",
+                Chandapura:"https://assets.marutisurakshaa.com/u/Chandapura-Truevalue"
+            
+
+            }
+        
+        };
+          var selectedLink =  links[selectedDepartment][selectedLocation];
+
+          window.open(selectedLink,'_blank');
+    }
+        
+
+        
+</script>
+
+</body>
+</html>

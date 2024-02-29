@@ -1,0 +1,88 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4ebf1;
+  color: #333;
+}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  padding: 10px;
+  color: #666;
+}
+
+form {
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.custom-select {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border:none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Add additional styling for larger screens if needed */
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+}
+
+/* Styling for Previous and Next Buttons */
+.next,
+.previous {
+    display: inline-block;
+    margin: 10px; /* Adjust margin as needed */
+}
+
+/* Mobile View Styles */
+@media only screen and (max-width: 600px) {
+    .next,
+    .previous {
+        display: block;
+        margin: 10px 0; /* Adjust margin as needed */
+    }
+}
